@@ -10,6 +10,7 @@ TT_LPAREN = "LPAREN"
 TT_RPAREN = "RPAREN"
 TT_INT = "INT"
 TT_FLOAT = "FLOAT"
+TT_POWER = "POWER"
 
 
 class Error:
@@ -98,6 +99,9 @@ class Lexer:  # Lexer
                 self.advance()
             elif self.current_char == ")":
                 tokens.append(Token(TT_RPAREN))
+                self.advance()
+            elif self.current_char == "^":
+                tokens.append(Token(TT_POWER))
                 self.advance()
             elif self.current_char in DIGITS:
                 tokens.append(self.make_number())
