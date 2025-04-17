@@ -2,9 +2,9 @@ import lexer
 
 while True:
     text = input("anaconda >")
-    result, error = lexer.run("<stdin>", text)
+    result, error = lexer.run("<ACSHELL>", text)
 
     if error:
-        print(error.as_string())
+        print(error)
     else:
         print(result)
