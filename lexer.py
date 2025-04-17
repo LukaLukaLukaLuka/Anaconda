@@ -406,7 +406,7 @@ class Interpreter:
         if error:
             return res.fail(error)
         else:
-            return res.succes(set_pos(node.pos_start, node.pos_end))
+            return res.succes(result.set_pos(node.pos_start, node.pos_end))
 
     def visit_UnaryOp(self, node, context):
         res = RTResult()
